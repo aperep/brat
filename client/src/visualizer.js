@@ -1244,7 +1244,8 @@ var Visualizer = (function($, window, undefined) {
               var firstChar = fragment.from - fragment.chunk.from;
               if (firstChar < 0) {
                 firstChar = 0;
-                dispatcher.post('messages', [[['<strong>WARNING</strong>' +
+                //dispatcher.post('messages', [[[ '' , 'warning', 15]]])
+                console.log('<strong>WARNING</strong>' +
                   '<br/> ' +
                   'The fragment [' + fragment.from + ', ' + fragment.to + '] (' + fragment.text + ') is not ' +
                   'contained in its designated chunk [' +
@@ -1252,8 +1253,8 @@ var Visualizer = (function($, window, undefined) {
                   'due to the fragment starting or ending with a space, please ' +
                   'verify the sanity of your data since we are unable to ' +
                   'visualise this fragment correctly and will drop leading ' +
-                  'space characters'
-                  , 'warning', 15]]]);
+                  'space characters');
+                  console.log(fragment);
               }
               var lastChar = fragment.to - fragment.chunk.from - 1;
 
